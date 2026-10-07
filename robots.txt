@@ -1,0 +1,4 @@
+# Site demonstrativo de um escritório fictício: indexação desativada.
+# Para liberar, troque "Disallow: /" por "Allow: /" e remova a meta tag robots do index.html.
+User-agent: *
+Disallow: /

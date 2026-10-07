@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lastro Contabilidade · Contabilidade estratégica e planejamento tributário</title>
+  <meta name="description" content="Escritório de contabilidade em São Paulo especializado em planejamento tributário, contabilidade consultiva, departamento pessoal e abertura de empresas. Diagnóstico tributário gratuito.">
+  <!-- Escritório fictício: remova esta linha (e ajuste o robots.txt) se quiser que o site seja indexado. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A231C">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Lastro Contabilidade">
+  <meta property="og:title" content="Lastro Contabilidade · Seus números em ordem. Seu lucro em dia.">
+  <meta property="og:description" content="Planejamento tributário, contabilidade consultiva e rotinas fiscais para empresas que querem pagar o imposto justo.">
+  <meta property="og:image" content="/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script>
+    (function (d) {
+      var h = d.documentElement;
+      h.classList.add('js');
+      try { if (sessionStorage.getItem('lastro-intro')) h.classList.add('intro-seen'); } catch (e) {}
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('intro-seen');
+      if (!h.classList.contains('intro-seen')) h.classList.add('is-loading');
+      // Rede de segurança: se o JS principal falhar, a página continua utilizável.
+      setTimeout(function () {
+        h.classList.remove('is-loading');
+        if (!window.__lastro) h.classList.add('js-fallback');
+      }, 5000);
+    })(document);
+  </script>
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Ícones -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path pathLength="1" d="M3 21h18"/><path pathLength="1" d="M5 21V8l7-5 7 5v13"/><path pathLength="1" d="M9.5 21v-5h5v5"/><path pathLength="1" d="M9 11.5h1.5M13.5 11.5H15"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path pathLength="1" d="M3 3v18h18"/><path pathLength="1" d="M7 15l4-4 3 3 6-7"/><path pathLength="1" d="M16 7h4v4"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><path pathLength="1" d="M19 5L5 19"/><circle pathLength="1" cx="7" cy="7" r="2.5"/><circle pathLength="1" cx="17" cy="17" r="2.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle pathLength="1" cx="9" cy="8" r="3.5"/><path pathLength="1" d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path pathLength="1" d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path pathLength="1" d="M18 14.3c2.1.7 3.5 2.8 3.5 5.7"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path pathLength="1" d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path pathLength="1" d="M14 3v5h5"/><path pathLength="1" d="M8.5 13h7M8.5 17h4.5"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path pathLength="1" d="M19 7V5.5A1.5 1.5 0 0 0 17.5 4h-12A2.5 2.5 0 0 0 3 6.5v11A2.5 2.5 0 0 0 5.5 20h14a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 19.5 7H5.5A2.5 2.5 0 0 1 3 6.5"/><circle pathLength="1" cx="16.5" cy="13.5" r="1.3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.6 4.2-2 1.3a10.5 10.5 0 0 0 6.2 6.2l1.3-2 4.2 1.6v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2.1-2.2z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.2-3.9A8.2 8.2 0 1 1 8.1 19z"/><path fill="currentColor" stroke="none" d="M9.2 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.7l-.5.6c-.1.2-.1.4 0 .6.5.9 1.3 1.7 2.3 2.2.2.1.4.1.6 0l.6-.6c.2-.2.4-.2.7-.1l1.6.7c.3.1.4.3.4.6v.4c0 .4-.2.8-.6 1-.6.3-1.4.4-2.2.2-2.6-.7-4.6-2.7-5.3-5.3-.1-.8 0-1.6.2-2.2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-5.7-7-11.2a7 7 0 0 1 14 0C19 15.3 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-3.2c0-1.4.9-2.3 2.1-2.3s2 .9 2 2.3V16M11.5 10.5V16"/></symbol>
+  </svg>
+
+  <!-- Intro -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <svg class="preloader__seal guilloche-line" data-guilloche="seal"></svg>
+      <div class="preloader__count"><span data-preloader-count>000</span><sup>%</sup></div>
+      <div class="preloader__bar"><span></span></div>
+      <p class="preloader__label" data-preloader-label>Conciliando lançamentos</p>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><i><span class="cursor__label"></span></i></div>
+    <div class="cursor__dot"><i></i></div>
+  </div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- Cabeçalho -->
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a href="#topo" class="logo" aria-label="Lastro Contabilidade — voltar ao início">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="2.6" pathLength="120" stroke-dasharray="1 2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="currentColor" stroke-width=".6" opacity=".6"/></svg>
+          <b>L</b>
+        </span>
+        <span class="logo__text">Lastro<small>Contabilidade</small></span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#metodo">Método</a>
+        <a href="#planos">Planos</a>
+        <a href="#depoimentos">Clientes</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+
+      <a href="#contato" class="btn btn--gold btn--sm header__cta" data-magnetic>
+        <span>Fale com um contador</span>
+      </a>
+
+      <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile" data-burger>
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="menu-mobile" data-menu>
+    <nav aria-label="Menu móvel">
+      <a href="#servicos" style="--i:0">Serviços</a>
+      <a href="#simulador" style="--i:1">Simulador</a>
+      <a href="#metodo" style="--i:2">Método</a>
+      <a href="#planos" style="--i:3">Planos</a>
+      <a href="#depoimentos" style="--i:4">Clientes</a>
+      <a href="#faq" style="--i:5">Dúvidas</a>
+      <a href="#contato" style="--i:6">Contato</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a href="tel:+551132548190">(11) 3254-8190</a>
+      <a href="mailto:contato@lastrocontabil.com.br">contato@lastrocontabil.com.br</a>
+    </div>
+  </div>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero" id="topo" data-hero>
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid"></div>
+        <svg class="guilloche guilloche--a guilloche-line" data-guilloche="rosette"></svg>
+        <svg class="guilloche guilloche--b guilloche-line" data-guilloche="rosette"></svg>
+        <div class="hero__glow" data-hero-glow></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow hero__fade" style="--d:.1s"><span class="eyebrow__dot"></span> Contabilidade estratégica desde 2008</p>
+
+          <h1 class="hero__title">
+            <span class="line"><span class="line__inner" style="--d:.15s">Seus números</span></span>
+            <span class="line"><span class="line__inner" style="--d:.25s"><em>em ordem.</em></span></span>
+            <span class="line"><span class="line__inner" style="--d:.35s">Seu lucro</span></span>
+            <span class="line"><span class="line__inner" style="--d:.45s"><span class="hl">em dia.<svg class="hl__line" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15C70 6 160 3 296 11"/></svg></span></span></span>
+          </h1>
+
+          <p class="hero__lead hero__fade" style="--d:.7s">
+            Planejamento tributário, contabilidade consultiva e rotinas fiscais para empresas que querem pagar o imposto justo — nem um centavo a mais.
+          </p>
+
+          <div class="hero__actions hero__fade" style="--d:.85s">
+            <a href="#simulador" class="btn btn--gold" data-magnetic data-cursor="Simular">
+              <span>Simular minha economia</span>
+              <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a href="#contato" class="btn btn--ghost" data-magnetic>
+              <span>Diagnóstico gratuito</span>
+            </a>
+          </div>
+
+          <ul class="hero__trust hero__fade" style="--d:1s">
+            <li><strong>4,9<span aria-hidden="true">★</span></strong>avaliação média dos clientes</li>
+            <li><strong>1.240+</strong>empresas atendidas</li>
+            <li><strong>21</strong>estados com clientes ativos</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="float float--1" data-speed="-0.12">
+            <div class="chip" style="--fd:0s">
+              <span class="chip__icon chip__icon--ok"><svg class="ico"><use href="#i-check"/></svg></span>
+              <span><strong>DAS de setembro pago</strong><small>R$ 4.812,40 · em dia</small></span>
+            </div>
+          </div>
+          <div class="float float--2" data-speed="0.1">
+            <div class="chip" style="--fd:-2s">
+              <span class="chip__icon"><svg class="ico"><use href="#i-users"/></svg></span>
+              <span><strong>Folha fechada</strong><small>38 colaboradores · eSocial ok</small></span>
+            </div>
+          </div>
+          <div class="float float--3" data-speed="-0.06">
+            <div class="chip" style="--fd:-4s">
+              <span class="chip__icon chip__icon--gold"><svg class="ico"><use href="#i-chart"/></svg></span>
+              <span><strong>+23,4% margem</strong><small>3º trimestre · 2026</small></span>
+            </div>
+          </div>
+
+          <div class="note-wrap hero__fade" style="--d:.5s">
+            <div class="note" data-tilt="12">
+              <svg class="note__pattern" data-guilloche="waves"></svg>
+              <div class="note__frame"></div>
+              <div class="note__holo"></div>
+
+              <div class="note__head">
+                <span class="note__brand">Lastro</span>
+                <span class="note__serial">Nº LST 2026·0918</span>
+              </div>
+              <p class="note__label">Economia tributária acumulada · 2026</p>
+              <p class="note__value" data-count="184320.77" data-format="brl2" data-dur="2600">R$ 184.320,77</p>
+
+              <div class="note__chart">
+                <span style="--h:28%;--i:0"></span><span style="--h:34%;--i:1"></span><span style="--h:31%;--i:2"></span>
+                <span style="--h:42%;--i:3"></span><span style="--h:47%;--i:4"></span><span style="--h:45%;--i:5"></span>
+                <span style="--h:58%;--i:6"></span><span style="--h:63%;--i:7"></span><span style="--h:71%;--i:8"></span>
+                <span style="--h:76%;--i:9"></span><span style="--h:88%;--i:10"></span><span class="is-now" style="--h:100%;--i:11"></span>
+              </div>
+
+              <div class="note__foot">
+                <span>Relatório mensal · Set/2026</span>
+                <span class="note__status"><i></i>Tudo em dia</span>
+              </div>
+
+              <div class="note__glare"></div>
+              <div class="note__seal">
+                <svg class="guilloche-line" data-guilloche="seal"></svg>
+                <b>L</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#numeros" class="hero__scroll" aria-label="Rolar para a próxima seção">
+        <span>Role</span><i></i>
+      </a>
+    </section>
+
+    <!-- FAIXAS -->
+    <div class="tickers" aria-hidden="true">
+      <div class="ticker ticker--back">
+        <div class="ticker__track" data-marquee data-dir="-1">
+          <span>IRPJ</span><i>·</i><span>CSLL</span><i>·</i><span>PIS</span><i>·</i><span>COFINS</span><i>·</i><span>ISS</span><i>·</i><span>ICMS</span><i>·</i><span>IPI</span><i>·</i><span>INSS</span><i>·</i><span>FGTS</span><i>·</i><span>IBS</span><i>·</i><span>CBS</span><i>·</i><span>DAS</span><i>·</i><span>DCTFWeb</span><i>·</i><span>SPED</span><i>·</i><span>eSocial</span><i>·</i>
+        </div>
+      </div>
+      <div class="ticker ticker--front">
+        <div class="ticker__track" data-marquee>
+          <span>Planejamento tributário</span><i>✦</i><span>Abertura de empresas</span><i>✦</i><span>Contabilidade consultiva</span><i>✦</i><span>Departamento pessoal</span><i>✦</i><span>Imposto de Renda</span><i>✦</i><span>BPO financeiro</span><i>✦</i><span>Reforma Tributária</span><i>✦</i><span>Holding patrimonial</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- NÚMEROS -->
+    <section class="section paper numbers" id="numeros">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="kicker" data-reveal>§ 01 · Balanço</span>
+            <h2 data-split>Resultados que fecham <em>no azul</em>, ano após ano.</h2>
+          </div>
+          <p class="lead" data-reveal style="--d:.15s">
+            Há 18 anos transformamos obrigações fiscais em vantagem competitiva. Os números abaixo são o nosso balanço — e ele é auditado pelos clientes todos os meses.
+          </p>
+        </div>
+
+        <div class="stats">
+          <div class="stat" data-reveal style="--d:0s">
+            <span class="stat__tag">Desde 2008</span>
+            <span class="stat__num"><span data-count="18" data-format="int">18</span></span>
+            <span class="stat__label">anos fechando balanços para empresas de todos os portes</span>
+          </div>
+          <div class="stat" data-reveal style="--d:.1s">
+            <span class="stat__tag">Carteira ativa</span>
+            <span class="stat__num"><span data-count="1240" data-format="int">1.240</span><small>+</small></span>
+            <span class="stat__label">empresas atendidas em 21 estados brasileiros</span>
+          </div>
+          <div class="stat" data-reveal style="--d:.2s">
+            <span class="stat__tag">Dentro da lei</span>
+            <span class="stat__num"><small>R$</small><span data-count="62" data-format="int">62</span><small>mi</small></span>
+            <span class="stat__label">em tributos economizados pelos nossos clientes</span>
+          </div>
+          <div class="stat" data-reveal style="--d:.3s">
+            <span class="stat__tag">Retenção</span>
+            <span class="stat__num"><span data-count="98" data-format="int">98</span><small>%</small></span>
+            <span class="stat__label">dos clientes renovam com a Lastro ano após ano</span>
+          </div>
+        </div>
+
+        <figure class="chart" data-reveal="fade">
+          <figcaption class="chart__cap">
+            <span>Economia tributária acumulada dos clientes</span>
+            <span class="chart__legend"><i></i>R$ milhões · 2008–2026</span>
+          </figcaption>
+          <div class="chart__box" data-chart='[[2008,0.4],[2010,1.6],[2012,3.9],[2014,7.2],[2016,12.5],[2018,19.8],[2020,28.4],[2022,38.1],[2024,49.6],[2026,62]]'>
+            <svg role="img" aria-label="Gráfico de linha mostrando a economia tributária acumulada crescendo de R$ 0,4 milhão em 2008 para R$ 62 milhões em 2026"></svg>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section paper services" id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>§ 02 · Serviços</span>
+          <h2 data-split>Tudo o que a sua empresa precisa, <em>num só lugar.</em></h2>
+        </div>
+
+        <div class="services__grid">
+          <div data-reveal style="--d:0s">
+            <article class="card" data-tilt="5" data-spot>
+              <div class="card__top">
+                <span class="card__icon"><svg class="ico ico--draw"><use href="#i-building"/></svg></span>
+                <span class="card__n">01</span>
+              </div>
+              <h3>Abertura e legalização</h3>
+              <p>Do CNPJ ao alvará em até 15 dias úteis, com o enquadramento tributário certo desde o primeiro dia.</p>
+              <ul class="card__tags"><li>CNPJ</li><li>Alvará</li><li>Inscrições</li></ul>
+              <a href="#contato" class="card__link">Quero abrir minha empresa <svg class="ico"><use href="#i-arrow"/></svg></a>
+            </article>
+          </div>
+          <div data-reveal style="--d:.08s">
+            <article class="card" data-tilt="5" data-spot>
+              <div class="card__top">
+                <span class="card__icon"><svg class="ico ico--draw"><use href="#i-chart"/></svg></span>
+                <span class="card__n">02</span>
+              </div>
+              <h3>Contabilidade consultiva</h3>
+              <p>Balancetes, DRE e indicadores explicados em reuniões mensais — não em planilhas que ninguém lê.</p>
+              <ul class="card__tags"><li>DRE</li><li>Balanço</li><li>KPIs</li></ul>
+              <a href="#contato" class="card__link">Falar com um consultor <svg class="ico"><use href="#i-arrow"/></svg></a>
+            </article>
+          </div>
+          <div data-reveal style="--d:.16s">
+            <article class="card" data-tilt="5" data-spot>
+              <div class="card__top">
+                <span class="card__icon"><svg class="ico ico--draw"><use href="#i-percent"/></svg></span>
+                <span class="card__n">03</span>
+              </div>
+              <h3>Planejamento tributário</h3>
+              <p>Revisão de regime, recuperação de créditos e preparação completa para a Reforma Tributária (IBS e CBS).</p>
+              <ul class="card__tags"><li>Créditos</li><li>Regimes</li><li>IBS/CBS</li></ul>
+              <a href="#simulador" class="card__link">Simular economia <svg class="ico"><use href="#i-arrow"/></svg></a>
+            </article>
+          </div>
+          <div data-reveal style="--d:0s">
+            <article class="card" data-tilt="5" data-spot>
+              <div class="card__top">
+                <span class="card__icon"><svg class="ico ico--draw"><use href="#i-users"/></svg></span>
+                <span class="card__n">04</span>
+              </div>
+              <h3>Departamento pessoal</h3>
+              <p>Folha de pagamento, eSocial, admissões, férias e rescisões calculados sem erro, sem multa e sem susto.</p>
+              <ul class="card__tags"><li>Folha</li><li>eSocial</li><li>FGTS Digital</li></ul>
+              <a href="#contato" class="card__link">Terceirizar minha folha <svg class="ico"><use href="#i-arrow"/></svg></a>
+            </article>
+          </div>
+          <div data-reveal style="--d:.08s">
+            <article class="card" data-tilt="5" data-spot>
+              <div class="card__top">
+                <span class="card__icon"><svg class="ico ico--draw"><use href="#i-doc"/></svg></span>
+                <span class="card__n">05</span>
+              </div>
+              <h3>Imposto de Renda PF</h3>
+              <p>Declaração completa, ganho de capital, carnê-leão e regularização de malha fina com quem entende do assunto.</p>
+              <ul class="card__tags"><li>IRPF</li><li>Carnê-leão</li><li>Malha fina</li></ul>
+              <a href="#contato" class="card__link">Declarar com a Lastro <svg class="ico"><use href="#i-arrow"/></svg></a>
+            </article>
+          </div>
+          <div data-reveal style="--d:.16s">
+            <article class="card" data-tilt="5" data-spot>
+              <div class="card__top">
+                <span class="card__icon"><svg class="ico ico--draw"><use href="#i-wallet"/></svg></span>
+                <span class="card__n">06</span>
+              </div>
+              <h3>BPO financeiro</h3>
+              <p>Contas a pagar e a receber, conciliação bancária e fluxo de caixa atualizados todos os dias no seu painel.</p>
+              <ul class="card__tags"><li>Conciliação</li><li>Fluxo de caixa</li><li>Painel</li></ul>
+              <a href="#contato" class="card__link">Organizar meu financeiro <svg class="ico"><use href="#i-arrow"/></svg></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="section dark sim" id="simulador">
+      <svg class="deco-rings guilloche-line" data-guilloche="rings" aria-hidden="true"></svg>
+      <div class="container sim__grid">
+        <div class="sim__intro">
+          <span class="kicker" data-reveal>§ 03 · Simulador</span>
+          <h2 data-split>Quanto do seu faturamento fica com o <em>Leão</em>?</h2>
+          <p class="lead" data-reveal style="--d:.1s">
+            Ajuste os controles e veja uma estimativa do que um planejamento tributário bem feito pode devolver ao seu caixa todos os anos.
+          </p>
+          <ul class="checklist" data-reveal style="--d:.2s">
+            <li><svg class="ico"><use href="#i-check"/></svg>Revisão de enquadramento e regime tributário</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Recuperação de créditos dos últimos 5 anos</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Segregação de receitas e produtos monofásicos</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Projeção de impacto da Reforma Tributária</li>
+          </ul>
+        </div>
+
+        <div data-reveal="scale" style="--d:.1s">
+          <form class="sim__panel" data-sim onsubmit="return false">
+            <div class="sim__field">
+              <label class="sim__label" for="sim-fat">
+                <span>Faturamento mensal</span>
+                <output class="sim__fat" for="sim-fat" data-sim-fat>R$ 120.000</output>
+              </label>
+              <input class="range" id="sim-fat" name="faturamento" type="range" min="0" max="100" step="0.5" value="47">
+              <div class="range__scale" aria-hidden="true"><span>R$ 10 mil</span><span>R$ 2 mi</span></div>
+            </div>
+
+            <fieldset class="sim__field">
+              <legend class="sim__label"><span>Segmento</span></legend>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="segmento" value="servicos" checked><span>Serviços</span></label>
+                <label class="opt"><input type="radio" name="segmento" value="comercio"><span>Comércio</span></label>
+                <label class="opt"><input type="radio" name="segmento" value="industria"><span>Indústria</span></label>
+                <label class="opt"><input type="radio" name="segmento" value="saude"><span>Saúde</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="sim__field">
+              <legend class="sim__label"><span>Regime atual</span></legend>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="regime" value="simples" checked><span>Simples Nacional</span></label>
+                <label class="opt"><input type="radio" name="regime" value="presumido"><span>Lucro Presumido</span></label>
+                <label class="opt"><input type="radio" name="regime" value="real"><span>Lucro Real</span></label>
+                <label class="opt"><input type="radio" name="regime" value="naosei"><span>Não sei</span></label>
+              </div>
+            </fieldset>
+
+            <div class="sim__result" aria-live="polite">
+              <div class="bars">
+                <div class="bar__row">
+                  <span>Imposto estimado hoje</span>
+                  <span class="bar__track"><span class="bar__fill bar__fill--red" data-bar-atual></span></span>
+                  <span class="bar__val" data-sim-atual>R$ 0</span>
+                </div>
+                <div class="bar__row">
+                  <span>Com a Lastro</span>
+                  <span class="bar__track"><span class="bar__fill bar__fill--gold" data-bar-novo></span></span>
+                  <span class="bar__val" data-sim-novo>R$ 0</span>
+                </div>
+              </div>
+
+              <div class="sim__total">
+                <div>
+                  <span class="sim__total-label">Economia potencial em 12 meses</span>
+                  <strong class="sim__eco" data-sim-eco>R$ 0</strong>
+                </div>
+                <span class="sim__pct"><span data-sim-pct>0%</span> menos imposto</span>
+              </div>
+
+              <a href="#contato" class="btn btn--gold btn--block" data-cursor="Validar">
+                <span>Quero validar com um especialista</span>
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <p class="sim__note">Simulação ilustrativa com base em médias de mercado e valores mensais. O resultado real depende de análise individual da sua empresa.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO -->
+    <section class="section paper method" id="metodo">
+      <div class="container method__grid">
+        <div class="method__intro">
+          <span class="kicker" data-reveal>§ 04 · Método</span>
+          <h2 data-split>Quatro etapas. <em>Zero</em> surpresas.</h2>
+          <p class="lead" data-reveal style="--d:.1s">
+            Trocar de contador não precisa ser traumático. Nosso método de transição foi refinado em mais de mil migrações — você só percebe a diferença no resultado.
+          </p>
+          <a href="#contato" class="btn btn--dark" data-reveal style="--d:.2s" data-magnetic>
+            <span>Começar pelo diagnóstico</span>
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+
+        <div class="method__stack">
+          <article class="step" style="--i:0">
+            <span class="step__n" aria-hidden="true">01</span>
+            <span class="step__meta">Etapa 01 · Semana 1</span>
+            <h3>Diagnóstico</h3>
+            <p>Analisamos as apurações dos últimos cinco anos em busca de pagamentos indevidos, créditos esquecidos e riscos fiscais escondidos.</p>
+            <ul class="step__tags"><li>Revisão fiscal</li><li>Mapa de riscos</li><li>Créditos</li></ul>
+          </article>
+          <article class="step" style="--i:1">
+            <span class="step__n" aria-hidden="true">02</span>
+            <span class="step__meta">Etapa 02 · Semanas 2–3</span>
+            <h3>Planejamento</h3>
+            <p>Simulamos regimes, estruturas societárias e cenários de pró-labore para definir o caminho com a menor carga — sempre dentro da lei.</p>
+            <ul class="step__tags"><li>Simulação de regimes</li><li>Pró-labore</li><li>Holding</li></ul>
+          </article>
+          <article class="step" style="--i:2">
+            <span class="step__n" aria-hidden="true">03</span>
+            <span class="step__meta">Etapa 03 · Semana 4</span>
+            <h3>Migração</h3>
+            <p>Buscamos toda a documentação com o contador anterior, conferimos saldos e configuramos sistemas. Você não precisa enviar um papel sequer.</p>
+            <ul class="step__tags"><li>Transição assistida</li><li>Conferência de saldos</li><li>Portal</li></ul>
+          </article>
+          <article class="step step--dark" style="--i:3">
+            <span class="step__n" aria-hidden="true">04</span>
+            <span class="step__meta">Etapa 04 · Todo mês</span>
+            <h3>Acompanhamento</h3>
+            <p>Reunião mensal de resultados, painel em tempo real e um contador dedicado respondendo no WhatsApp em minutos, não em dias.</p>
+            <ul class="step__tags"><li>Contador dedicado</li><li>Painel online</li><li>Reunião mensal</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section class="section dark pricing" id="planos" data-pricing>
+      <div class="container">
+        <div class="pricing__head">
+          <div class="section-head">
+            <span class="kicker" data-reveal>§ 05 · Planos</span>
+            <h2 data-split>Honorários claros, <em>sem letras miúdas.</em></h2>
+          </div>
+          <div class="billing" data-reveal style="--d:.15s">
+            <button type="button" class="billing__opt is-on" data-billing-set="monthly">Mensal</button>
+            <button type="button" class="switch" role="switch" aria-checked="false" aria-label="Cobrança anual" data-billing></button>
+            <button type="button" class="billing__opt" data-billing-set="annual">Anual <span class="badge-save">−15%</span></button>
+          </div>
+        </div>
+
+        <div class="plans">
+          <div data-reveal style="--d:0s">
+            <article class="plan" data-spot>
+              <h3 class="plan__name">Essencial</h3>
+              <p class="plan__desc">Para MEI, autônomos e profissionais liberais que querem tranquilidade.</p>
+              <div class="plan__price"><span class="cur">R$</span><span class="val" data-price data-monthly="249" data-annual="212">249</span></div>
+              <p class="plan__per" data-billing-note>por mês</p>
+              <ul>
+                <li><svg class="ico"><use href="#i-check"/></svg>Abertura ou migração gratuita</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Apuração de impostos e obrigações acessórias</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Pró-labore de 1 sócio</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Atendimento por WhatsApp e e-mail</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>IRPF do sócio com 50% de desconto</li>
+              </ul>
+              <a href="#contato" class="btn btn--ghost btn--block" data-plan="Essencial"><span>Escolher Essencial</span></a>
+            </article>
+          </div>
+          <div data-reveal style="--d:.1s">
+            <article class="plan plan--featured" data-spot>
+              <span class="plan__tag">Mais escolhido</span>
+              <h3 class="plan__name">Empresarial</h3>
+              <p class="plan__desc">Para empresas do Simples Nacional em ritmo de crescimento.</p>
+              <div class="plan__price"><span class="cur">R$</span><span class="val" data-price data-monthly="689" data-annual="586">689</span></div>
+              <p class="plan__per" data-billing-note>por mês</p>
+              <ul>
+                <li><svg class="ico"><use href="#i-check"/></svg>Tudo do plano Essencial</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Folha de pagamento até 10 colaboradores</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Planejamento tributário anual</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>DRE e relatórios gerenciais mensais</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Contador dedicado</li>
+              </ul>
+              <a href="#contato" class="btn btn--gold btn--block" data-plan="Empresarial" data-magnetic="0.15"><span>Escolher Empresarial</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </article>
+          </div>
+          <div data-reveal style="--d:.2s">
+            <article class="plan" data-spot>
+              <h3 class="plan__name">Corporate</h3>
+              <p class="plan__desc">Para empresas do Lucro Presumido e Lucro Real com operação robusta.</p>
+              <div class="plan__price"><span class="from">a partir de</span><span class="cur">R$</span><span class="val" data-price data-monthly="1890" data-annual="1607">1.890</span></div>
+              <p class="plan__per" data-billing-note>por mês</p>
+              <ul>
+                <li><svg class="ico"><use href="#i-check"/></svg>Tudo do plano Empresarial</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Folha até 50 colaboradores</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Revisão fiscal dos últimos 5 anos</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>BPO financeiro integrado</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Reunião estratégica mensal com sócio</li>
+              </ul>
+              <a href="#contato" class="btn btn--ghost btn--block" data-plan="Corporate"><span>Falar com um sócio</span></a>
+            </article>
+          </div>
+        </div>
+        <p class="plans__note" data-reveal>Sem fidelidade · Migração assistida inclusa em todos os planos · Valores para 2026</p>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section paper testi" id="depoimentos">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="kicker" data-reveal>§ 06 · Clientes</span>
+          <h2 data-split>Quem confia os números <em>à Lastro.</em></h2>
+        </div>
+
+        <div class="testi__cols" data-reveal="fade">
+          <div class="testi__col" data-speed="0.05">
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“Em três meses encontraram <mark>R$ 87 mil</mark> em créditos de PIS/COFINS que o escritório anterior nunca tinha olhado.”</blockquote>
+              <figcaption><span class="avatar">RA</span><span><strong>Ricardo A.</strong><small>Distribuidora de alimentos · Guarulhos</small></span></figcaption>
+            </figure>
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“Saímos do Simples para o Presumido com toda a segurança e a carga caiu <mark>quase 30%</mark>.”</blockquote>
+              <figcaption><span class="avatar">FL</span><span><strong>Fernanda L.</strong><small>E-commerce de moda · Curitiba</small></span></figcaption>
+            </figure>
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“Fizeram meu IR com ganho de capital de um imóvel e ainda reduziram o imposto de forma totalmente legal.”</blockquote>
+              <figcaption><span class="avatar">CE</span><span><strong>Carlos E.</strong><small>Médico · Ribeirão Preto</small></span></figcaption>
+            </figure>
+          </div>
+          <div class="testi__col testi__col--mid" data-speed="-0.05">
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“Pela primeira vez eu entendo o meu DRE. A reunião mensal virou o compromisso <mark>mais importante</mark> do meu mês.”</blockquote>
+              <figcaption><span class="avatar">MC</span><span><strong>Mariana C.</strong><small>Clínica odontológica · Campinas</small></span></figcaption>
+            </figure>
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“Respondem no WhatsApp em minutos. É como ter um <mark>CFO dentro da empresa</mark>, pagando uma fração.”</blockquote>
+              <figcaption><span class="avatar">GR</span><span><strong>Gustavo R.</strong><small>Construtora · Santo André</small></span></figcaption>
+            </figure>
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“O planejamento para a Reforma Tributária nos colocou <mark>um ano à frente</mark> da concorrência.”</blockquote>
+              <figcaption><span class="avatar">AS</span><span><strong>André S.</strong><small>Indústria metalúrgica · Joinville</small></span></figcaption>
+            </figure>
+          </div>
+          <div class="testi__col" data-speed="0.09">
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“Migraram tudo do contador antigo sem eu precisar mandar um papel. <mark>Zero dor de cabeça.</mark>”</blockquote>
+              <figcaption><span class="avatar">TM</span><span><strong>Thiago M.</strong><small>Software house · São Paulo</small></span></figcaption>
+            </figure>
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“A folha com 40 funcionários roda sem nenhum erro há dois anos. <mark>Isso não tem preço.</mark>”</blockquote>
+              <figcaption><span class="avatar">PN</span><span><strong>Patrícia N.</strong><small>Rede de restaurantes · São Paulo</small></span></figcaption>
+            </figure>
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“Estruturamos a holding familiar com toda a orientação sucessória. Profissionais de <mark>altíssimo nível</mark>.”</blockquote>
+              <figcaption><span class="avatar">HV</span><span><strong>Helena V.</strong><small>Holding patrimonial · São Paulo</small></span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section paper faq" id="faq">
+      <div class="container faq__grid">
+        <div class="faq__intro">
+          <span class="kicker" data-reveal>§ 07 · Dúvidas</span>
+          <h2 data-split>Perguntas que <em>todo empresário</em> faz.</h2>
+          <div class="faq__card" data-reveal style="--d:.15s">
+            <p><strong>Ainda ficou alguma dúvida?</strong> Fale direto com um contador — sem robô, sem fila.</p>
+            <a href="https://wa.me/5511974123386?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20os%20servi%C3%A7os%20da%20Lastro." class="btn btn--dark btn--sm" target="_blank" rel="noopener" data-magnetic>
+              <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>Chamar no WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="faq__list" data-reveal style="--d:.1s">
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-q1">Como funciona a troca de contador?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-1" role="region" aria-labelledby="faq-q1"><div><p>Nós cuidamos de tudo: solicitamos a documentação ao escritório anterior, revisamos pendências e assumimos as rotinas na competência seguinte, sem interromper a sua operação.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-q2">Vocês atendem empresas de fora de São Paulo?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-2" role="region" aria-labelledby="faq-q2"><div><p>Sim. Nosso atendimento é 100% digital, com clientes em 21 estados. Reuniões por videochamada, documentos pelo portal e um contador dedicado no WhatsApp.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-q3">O diagnóstico tributário é mesmo gratuito?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-3" role="region" aria-labelledby="faq-q3"><div><p>É. Analisamos seu regime atual e apontamos oportunidades sem compromisso. Se fizer sentido para você, apresentamos uma proposta com escopo e valores fechados.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-q4">Em quanto tempo consigo abrir minha empresa?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-4" role="region" aria-labelledby="faq-q4"><div><p>Em média de 7 a 15 dias úteis, dependendo do município e da atividade. Você acompanha cada etapa pelo portal, do registro na Junta ao alvará de funcionamento.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-q5">Como a Reforma Tributária afeta minha empresa?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-5" role="region" aria-labelledby="faq-q5"><div><p>A transição para IBS e CBS começou em 2026 e segue até 2033. Mapeamos o impacto em preço, margem e créditos para que você se planeje com antecedência — e não no susto.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-q6">Existe fidelidade ou multa de cancelamento?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-6" role="region" aria-labelledby="faq-q6"><div><p>Não. Nossos contratos não têm fidelidade. Pedimos apenas aviso prévio de 30 dias para que a transição seja organizada para os dois lados.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section dark contact" id="contato">
+      <svg class="deco-rings deco-rings--right guilloche-line" data-guilloche="rings" aria-hidden="true"></svg>
+      <div class="container">
+        <div class="contact__head">
+          <span class="kicker" data-reveal>§ 08 · Contato</span>
+          <h2 data-split>Vamos colocar seus números <em>em ordem?</em></h2>
+        </div>
+
+        <div class="contact__grid">
+          <div data-reveal style="--d:.05s">
+            <form class="sheet" novalidate data-form>
+              <div class="sheet__head">
+                <span class="sheet__title">Ficha de atendimento</span>
+                <span class="sheet__serial">Nº <span data-serial>2026-1007</span></span>
+              </div>
+
+              <div class="fields">
+                <div class="field">
+                  <input id="f-nome" name="nome" type="text" placeholder=" " autocomplete="name" required>
+                  <label for="f-nome">Nome completo</label>
+                  <span class="field__error" data-error-for="nome"></span>
+                </div>
+                <div class="field">
+                  <input id="f-empresa" name="empresa" type="text" placeholder=" " autocomplete="organization">
+                  <label for="f-empresa">Empresa <small>(opcional)</small></label>
+                </div>
+                <div class="field">
+                  <input id="f-email" name="email" type="email" placeholder=" " autocomplete="email" required>
+                  <label for="f-email">E-mail</label>
+                  <span class="field__error" data-error-for="email"></span>
+                </div>
+                <div class="field">
+                  <input id="f-tel" name="telefone" type="tel" placeholder=" " autocomplete="tel" inputmode="tel" required>
+                  <label for="f-tel">Telefone / WhatsApp</label>
+                  <span class="field__error" data-error-for="telefone"></span>
+                </div>
+                <div class="field field--select">
+                  <select id="f-assunto" name="assunto">
+                    <option>Trocar de contador</option>
+                    <option>Abrir uma empresa</option>
+                    <option>Planejamento tributário</option>
+                    <option>Imposto de Renda PF</option>
+                    <option>Departamento pessoal</option>
+                    <option>Outro assunto</option>
+                  </select>
+                  <label for="f-assunto">Como podemos ajudar?</label>
+                </div>
+                <div class="field field--select">
+                  <select id="f-fat" name="faturamento">
+                    <option>Até R$ 30 mil/mês</option>
+                    <option>R$ 30 mil a R$ 100 mil/mês</option>
+                    <option>R$ 100 mil a R$ 500 mil/mês</option>
+                    <option>Acima de R$ 500 mil/mês</option>
+                    <option>Ainda não faturo</option>
+                  </select>
+                  <label for="f-fat">Faturamento</label>
+                </div>
+                <div class="field field--full">
+                  <textarea id="f-msg" name="mensagem" rows="1" placeholder=" "></textarea>
+                  <label for="f-msg">Conte rapidamente sobre sua empresa <small>(opcional)</small></label>
+                </div>
+              </div>
+
+              <label class="check">
+                <input type="checkbox" name="consentimento" required>
+                <span class="check__box" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <span>Autorizo a Lastro a entrar em contato comigo, conforme a <a href="#">Política de Privacidade</a> (LGPD).</span>
+              </label>
+              <span class="field__error field__error--static" data-error-for="consentimento"></span>
+
+              <button type="submit" class="btn btn--dark btn--block sheet__submit" data-cursor="Enviar">
+                <span class="btn__label">Enviar para um contador</span>
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+                <span class="coin" aria-hidden="true"></span>
+              </button>
+              <p class="sheet__hint">Resposta em até 2 horas úteis.</p>
+
+              <div class="stamp" aria-hidden="true">
+                <div class="stamp__inner">
+                  <span class="stamp__top">Lastro · Contabilidade</span>
+                  <strong>Protocolado</strong>
+                  <span class="stamp__date" data-stamp-date>07 OUT 2026</span>
+                </div>
+              </div>
+              <div class="sheet__done" role="status" aria-live="polite">
+                <p data-done-msg></p>
+                <button type="button" class="link-btn" data-form-reset>Enviar outra mensagem</button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="contact__info" aria-label="Canais de atendimento">
+            <ul class="info">
+              <li data-reveal style="--d:.1s">
+                <a class="info__card" href="https://wa.me/5511974123386?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20contador%20da%20Lastro." target="_blank" rel="noopener" data-spot>
+                  <span class="info__icon"><svg class="ico"><use href="#i-wa"/></svg></span>
+                  <span><span class="info__label">WhatsApp</span><span class="info__value">(11) 97412-3386</span></span>
+                  <svg class="ico info__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </li>
+              <li data-reveal style="--d:.15s">
+                <a class="info__card" href="tel:+551132548190" data-spot>
+                  <span class="info__icon"><svg class="ico"><use href="#i-phone"/></svg></span>
+                  <span><span class="info__label">Telefone</span><span class="info__value">(11) 3254-8190</span></span>
+                  <svg class="ico info__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </li>
+              <li data-reveal style="--d:.2s">
+                <a class="info__card" href="mailto:contato@lastrocontabil.com.br" data-spot>
+                  <span class="info__icon"><svg class="ico"><use href="#i-mail"/></svg></span>
+                  <span><span class="info__label">E-mail</span><span class="info__value">contato@lastrocontabil.com.br</span></span>
+                  <svg class="ico info__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </li>
+              <li data-reveal style="--d:.25s">
+                <div class="info__card info__card--static">
+                  <span class="info__icon"><svg class="ico"><use href="#i-clock"/></svg></span>
+                  <span><span class="info__label">Horário</span><span class="info__value">Seg. a sex. · 8h30 às 18h</span></span>
+                </div>
+              </li>
+            </ul>
+
+            <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Paulista%2C%201842%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener" data-reveal style="--d:.3s" data-cursor="Mapa">
+              <svg class="map__svg" viewBox="0 0 400 220" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+                <g class="map__blocks">
+                  <path d="M0 40 L400 -10 M0 150 L400 100 M0 205 L400 160"/>
+                  <path d="M60 0 L95 220 M150 0 L178 220 M240 0 L262 220 M330 0 L345 220"/>
+                  <path d="M0 95 C120 80 200 110 400 60" class="map__minor"/>
+                </g>
+                <path class="map__avenue" d="M-10 128 L410 74"/>
+                <text class="map__street" x="250" y="82" transform="rotate(-7.3 250 82)">AV. PAULISTA</text>
+              </svg>
+              <span class="map__pin"><svg class="ico"><use href="#i-pin"/></svg></span>
+              <span class="map__label">
+                <strong>Av. Paulista, 1.842 · Conj. 154</strong>
+                <small>Bela Vista · São Paulo/SP · 01310-200</small>
+              </span>
+              <span class="map__cta">Abrir no mapa <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#topo" class="logo" aria-label="Lastro Contabilidade — voltar ao início">
+            <span class="logo__mark" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="2.6" pathLength="120" stroke-dasharray="1 2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="currentColor" stroke-width=".6" opacity=".6"/></svg>
+              <b>L</b>
+            </span>
+            <span class="logo__text">Lastro<small>Contabilidade</small></span>
+          </a>
+          <p>Contabilidade estratégica, planejamento tributário e gestão fiscal para empresas que levam os números a sério.</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/lastrocontabil" target="_blank" rel="noopener" aria-label="Instagram da Lastro"><svg class="ico"><use href="#i-instagram"/></svg></a>
+            <a href="https://www.linkedin.com/company/lastro-contabilidade" target="_blank" rel="noopener" aria-label="LinkedIn da Lastro"><svg class="ico"><use href="#i-linkedin"/></svg></a>
+            <a href="https://wa.me/5511974123386" target="_blank" rel="noopener" aria-label="WhatsApp da Lastro"><svg class="ico"><use href="#i-wa"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#simulador">Simulador</a></li>
+            <li><a href="#metodo">Método</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">Abertura de empresas</a></li>
+            <li><a href="#servicos">Planejamento tributário</a></li>
+            <li><a href="#servicos">Departamento pessoal</a></li>
+            <li><a href="#servicos">Imposto de Renda PF</a></li>
+            <li><a href="#servicos">BPO financeiro</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul class="footer__contact">
+            <li><a href="tel:+551132548190">(11) 3254-8190</a></li>
+            <li><a href="https://wa.me/5511974123386" target="_blank" rel="noopener">(11) 97412-3386 · WhatsApp</a></li>
+            <li><a href="mailto:contato@lastrocontabil.com.br">contato@lastrocontabil.com.br</a></li>
+            <li>Av. Paulista, 1.842 · Conj. 154<br>Bela Vista · São Paulo/SP</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__word" data-reveal="fade" aria-hidden="true">
+        <span style="--i:0"><span>L</span></span><span style="--i:1"><span>a</span></span><span style="--i:2"><span>s</span></span><span style="--i:3"><span>t</span></span><span style="--i:4"><span>r</span></span><span style="--i:5"><span>o</span></span>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Lastro Contabilidade Ltda. Todos os direitos reservados.</span>
+        <span class="footer__legal"><a href="#">Política de privacidade</a><a href="#">Termos de uso</a></span>
+        <a href="#topo" class="to-top">Voltar ao topo <svg class="ico" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/5511974123386?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20contador." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" data-wa>
+    <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+    <span class="wa-float__tip">Fale com um contador agora</span>
+  </a>
+</body>
+</html>

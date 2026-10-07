@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página não encontrada · Lastro Contabilidade</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0A231C">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .e404 { position: relative; min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 48px 16px; text-align: center; overflow: hidden; }
+    .e404__seal { position: absolute; left: 50%; top: 50%; width: 960px; height: 960px; margin: -480px 0 0 -480px; color: var(--gold); opacity: .12; animation: spin 160s linear infinite; }
+    .e404__inner { position: relative; max-width: 620px; }
+    .e404__code {
+      display: block; margin: 8px 0 18px;
+      font-family: var(--font-display); font-weight: 300;
+      font-size: clamp(7rem, 26vw, 15rem); line-height: .85; letter-spacing: -.05em;
+      background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .e404 h1 { margin-bottom: 18px; font-size: clamp(1.8rem, 4.4vw, 2.8rem); font-weight: 380; }
+    .e404 h1 em { font-style: italic; color: var(--gold-light); }
+    .e404 p { margin: 0 auto 36px; max-width: 46ch; color: var(--muted-light); }
+    .e404 .kicker { justify-content: center; }
+  </style>
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <main class="e404 dark">
+    <svg class="e404__seal guilloche-line" data-guilloche="rosette" aria-hidden="true"></svg>
+    <div class="e404__inner">
+      <span class="kicker">Erro · Lançamento inexistente</span>
+      <span class="e404__code" aria-hidden="true">404</span>
+      <h1>Esta página <em>não fecha</em> o balanço.</h1>
+      <p>O endereço que você procurou não existe ou foi movido. Mas fique tranquilo: seus números continuam em boas mãos.</p>
+      <a href="/" class="btn btn--gold">
+        <span>Voltar para o início</span>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
