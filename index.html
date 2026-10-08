@@ -31,12 +31,8 @@
     (function (d) {
       var h = d.documentElement;
       h.classList.add('js');
-      try { if (sessionStorage.getItem('lastro-intro')) h.classList.add('intro-seen'); } catch (e) {}
-      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('intro-seen');
-      if (!h.classList.contains('intro-seen')) h.classList.add('is-loading');
       // Rede de segurança: se o JS principal falhar, a página continua utilizável.
       setTimeout(function () {
-        h.classList.remove('is-loading');
         if (!window.__lastro) h.classList.add('js-fallback');
       }, 5000);
     })(document);
@@ -65,16 +61,6 @@
     <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-3.2c0-1.4.9-2.3 2.1-2.3s2 .9 2 2.3V16M11.5 10.5V16"/></symbol>
   </svg>
-
-  <!-- Intro -->
-  <div class="preloader" aria-hidden="true">
-    <div class="preloader__inner">
-      <svg class="preloader__seal guilloche-line" data-guilloche="seal"></svg>
-      <div class="preloader__count"><span data-preloader-count>000</span><sup>%</sup></div>
-      <div class="preloader__bar"><span></span></div>
-      <p class="preloader__label" data-preloader-label>Conciliando lançamentos</p>
-    </div>
-  </div>
 
   <div class="cursor" aria-hidden="true">
     <div class="cursor__ring"><i><span class="cursor__label"></span></i></div>
@@ -131,119 +117,41 @@
   <main id="conteudo">
 
     <!-- HERO -->
-    <section class="hero" id="topo" data-hero>
-      <div class="hero__bg" aria-hidden="true">
-        <div class="hero__grid"></div>
-        <svg class="guilloche guilloche--a guilloche-line" data-guilloche="rosette"></svg>
-        <svg class="guilloche guilloche--b guilloche-line" data-guilloche="rosette"></svg>
-        <div class="hero__glow" data-hero-glow></div>
-      </div>
-
+    <section class="hero" id="topo">
       <div class="container hero__inner">
         <div class="hero__content">
-          <p class="eyebrow hero__fade" style="--d:.1s"><span class="eyebrow__dot"></span> Contabilidade estratégica desde 2008</p>
+          <p class="hero__kicker">Escritório de contabilidade em São Paulo · desde 2008</p>
 
-          <h1 class="hero__title">
-            <span class="line"><span class="line__inner" style="--d:.15s">Seus números</span></span>
-            <span class="line"><span class="line__inner" style="--d:.25s"><em>em ordem.</em></span></span>
-            <span class="line"><span class="line__inner" style="--d:.35s">Seu lucro</span></span>
-            <span class="line"><span class="line__inner" style="--d:.45s"><span class="hl">em dia.<svg class="hl__line" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15C70 6 160 3 296 11"/></svg></span></span></span>
-          </h1>
+          <h1 class="hero__title">Seus números em ordem.<br> Seu lucro em dia.</h1>
 
-          <p class="hero__lead hero__fade" style="--d:.7s">
+          <p class="hero__lead">
             Planejamento tributário, contabilidade consultiva e rotinas fiscais para empresas que querem pagar o imposto justo — nem um centavo a mais.
           </p>
 
-          <div class="hero__actions hero__fade" style="--d:.85s">
-            <a href="#simulador" class="btn btn--gold" data-magnetic data-cursor="Simular">
-              <span>Simular minha economia</span>
+          <div class="hero__actions">
+            <a href="#contato" class="btn btn--gold">
+              <span>Fale com um contador</span>
               <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
             </a>
-            <a href="#contato" class="btn btn--ghost" data-magnetic>
-              <span>Diagnóstico gratuito</span>
-            </a>
+            <a href="#simulador" class="hero__link">Simular minha economia</a>
           </div>
 
-          <ul class="hero__trust hero__fade" style="--d:1s">
-            <li><strong>4,9<span aria-hidden="true">★</span></strong>avaliação média dos clientes</li>
-            <li><strong>1.240+</strong>empresas atendidas</li>
-            <li><strong>21</strong>estados com clientes ativos</li>
+          <p class="hero__facts">1.240 empresas atendidas · clientes em 21 estados · sem fidelidade</p>
+        </div>
+
+        <nav class="hero__index" aria-label="Serviços">
+          <p class="hero__index-title">O que fazemos</p>
+          <ul>
+            <li><a href="#servicos">Abertura e legalização de empresas</a></li>
+            <li><a href="#servicos">Contabilidade consultiva</a></li>
+            <li><a href="#servicos">Planejamento tributário</a></li>
+            <li><a href="#servicos">Departamento pessoal</a></li>
+            <li><a href="#servicos">Imposto de Renda PF</a></li>
+            <li><a href="#servicos">BPO financeiro</a></li>
           </ul>
-        </div>
-
-        <div class="hero__visual" aria-hidden="true">
-          <div class="float float--1" data-speed="-0.12">
-            <div class="chip" style="--fd:0s">
-              <span class="chip__icon chip__icon--ok"><svg class="ico"><use href="#i-check"/></svg></span>
-              <span><strong>DAS de setembro pago</strong><small>R$ 4.812,40 · em dia</small></span>
-            </div>
-          </div>
-          <div class="float float--2" data-speed="0.1">
-            <div class="chip" style="--fd:-2s">
-              <span class="chip__icon"><svg class="ico"><use href="#i-users"/></svg></span>
-              <span><strong>Folha fechada</strong><small>38 colaboradores · eSocial ok</small></span>
-            </div>
-          </div>
-          <div class="float float--3" data-speed="-0.06">
-            <div class="chip" style="--fd:-4s">
-              <span class="chip__icon chip__icon--gold"><svg class="ico"><use href="#i-chart"/></svg></span>
-              <span><strong>+23,4% margem</strong><small>3º trimestre · 2026</small></span>
-            </div>
-          </div>
-
-          <div class="note-wrap hero__fade" style="--d:.5s">
-            <div class="note" data-tilt="12">
-              <svg class="note__pattern" data-guilloche="waves"></svg>
-              <div class="note__frame"></div>
-              <div class="note__holo"></div>
-
-              <div class="note__head">
-                <span class="note__brand">Lastro</span>
-                <span class="note__serial">Nº LST 2026·0918</span>
-              </div>
-              <p class="note__label">Economia tributária acumulada · 2026</p>
-              <p class="note__value" data-count="184320.77" data-format="brl2" data-dur="2600">R$ 184.320,77</p>
-
-              <div class="note__chart">
-                <span style="--h:28%;--i:0"></span><span style="--h:34%;--i:1"></span><span style="--h:31%;--i:2"></span>
-                <span style="--h:42%;--i:3"></span><span style="--h:47%;--i:4"></span><span style="--h:45%;--i:5"></span>
-                <span style="--h:58%;--i:6"></span><span style="--h:63%;--i:7"></span><span style="--h:71%;--i:8"></span>
-                <span style="--h:76%;--i:9"></span><span style="--h:88%;--i:10"></span><span class="is-now" style="--h:100%;--i:11"></span>
-              </div>
-
-              <div class="note__foot">
-                <span>Relatório mensal · Set/2026</span>
-                <span class="note__status"><i></i>Tudo em dia</span>
-              </div>
-
-              <div class="note__glare"></div>
-              <div class="note__seal">
-                <svg class="guilloche-line" data-guilloche="seal"></svg>
-                <b>L</b>
-              </div>
-            </div>
-          </div>
-        </div>
+        </nav>
       </div>
-
-      <a href="#numeros" class="hero__scroll" aria-label="Rolar para a próxima seção">
-        <span>Role</span><i></i>
-      </a>
     </section>
-
-    <!-- FAIXAS -->
-    <div class="tickers" aria-hidden="true">
-      <div class="ticker ticker--back">
-        <div class="ticker__track" data-marquee data-dir="-1">
-          <span>IRPJ</span><i>·</i><span>CSLL</span><i>·</i><span>PIS</span><i>·</i><span>COFINS</span><i>·</i><span>ISS</span><i>·</i><span>ICMS</span><i>·</i><span>IPI</span><i>·</i><span>INSS</span><i>·</i><span>FGTS</span><i>·</i><span>IBS</span><i>·</i><span>CBS</span><i>·</i><span>DAS</span><i>·</i><span>DCTFWeb</span><i>·</i><span>SPED</span><i>·</i><span>eSocial</span><i>·</i>
-        </div>
-      </div>
-      <div class="ticker ticker--front">
-        <div class="ticker__track" data-marquee>
-          <span>Planejamento tributário</span><i>✦</i><span>Abertura de empresas</span><i>✦</i><span>Contabilidade consultiva</span><i>✦</i><span>Departamento pessoal</span><i>✦</i><span>Imposto de Renda</span><i>✦</i><span>BPO financeiro</span><i>✦</i><span>Reforma Tributária</span><i>✦</i><span>Holding patrimonial</span><i>✦</i>
-        </div>
-      </div>
-    </div>
 
     <!-- NÚMEROS -->
     <section class="section paper numbers" id="numeros">

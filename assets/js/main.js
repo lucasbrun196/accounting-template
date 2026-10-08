@@ -28,15 +28,6 @@
      Padrões guilloché (como os de cédulas), gerados em SVG
      ------------------------------------------------------------------ */
   const GUILLOCHE = {
-    rosette: {
-      size: 1000,
-      bands: [
-        { n: 28, k: 12, r: 330, a: 58, steps: 360 },
-        { n: 22, k: 30, r: 452, a: 26, steps: 600, mod: [5, 0.45] },
-        { n: 18, k: 7, r: 168, a: 54, steps: 280 },
-      ],
-      circles: [392, 398, 494, 499, 244],
-    },
     rings: {
       size: 1000,
       bands: [
@@ -44,14 +35,6 @@
         { n: 16, k: 9, r: 250, a: 40, steps: 300 },
       ],
       circles: [452, 458],
-    },
-    seal: {
-      size: 200,
-      bands: [
-        { n: 16, k: 14, r: 78, a: 7, steps: 260 },
-        { n: 12, k: 6, r: 45, a: 15, steps: 180 },
-      ],
-      circles: [92, 95, 62],
     },
   };
 
@@ -74,24 +57,6 @@
   function drawGuilloche(svg) {
     const type = svg.dataset.guilloche;
     const frag = document.createDocumentFragment();
-
-    if (type === 'waves') {
-      const W = 460, H = 300;
-      svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-      svg.setAttribute('preserveAspectRatio', 'none');
-      [1, -1].forEach((dir) => {
-        for (let j = -3; j < 38; j++) {
-          let d = '';
-          for (let x = 0; x <= W; x += 6) {
-            const y = j * 8.4 + 7 * Math.sin(x * 0.028 + j * 0.42 * dir) + 3 * Math.sin(x * 0.011 - j * 0.2);
-            d += (x ? 'L' : 'M') + x + ' ' + y.toFixed(1);
-          }
-          frag.appendChild(svgEl('path', { d }));
-        }
-      });
-      svg.appendChild(frag);
-      return;
-    }
 
     const cfg = GUILLOCHE[type];
     if (!cfg) return;
@@ -179,54 +144,12 @@
   }
   $$('[data-split]').forEach(splitWords);
 
-  /* ------------------------------------------------------------------
-     Intro / preloader
-     ------------------------------------------------------------------ */
   let markReady;
   const ready = new Promise((resolve) => { markReady = resolve; });
-
-  function setReady() {
-    html.classList.remove('is-loading');
-    requestAnimationFrame(() => {
-      html.classList.add('is-ready');
-      markReady();
-    });
-  }
-
-  (function intro() {
-    const pre = $('.preloader');
-    if (!pre || html.classList.contains('intro-seen')) {
-      if (pre) pre.remove();
-      setReady();
-      return;
-    }
-    const num = $('[data-preloader-count]', pre);
-    const bar = $('.preloader__bar span', pre);
-    const label = $('[data-preloader-label]', pre);
-    const labels = ['Conciliando lançamentos', 'Apurando tributos', 'Fechando o balanço'];
-    const dur = 1700;
-    const t0 = performance.now();
-    let lastLabel = -1;
-
-    const step = (now) => {
-      const p = clamp((now - t0) / dur, 0, 1);
-      const e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-      num.textContent = String(Math.round(e * 100)).padStart(3, '0');
-      bar.style.transform = `scaleX(${e})`;
-      const li = Math.min(labels.length - 1, Math.floor(p * labels.length));
-      if (li !== lastLabel) { label.textContent = labels[li]; lastLabel = li; }
-      if (p < 1) requestAnimationFrame(step);
-      else setTimeout(finish, 220);
-    };
-    requestAnimationFrame(step);
-
-    function finish() {
-      pre.classList.add('is-done');
-      setTimeout(setReady, 380);
-      setTimeout(() => pre.remove(), 1300);
-      try { sessionStorage.setItem('lastro-intro', '1'); } catch (e) { /* modo privado */ }
-    }
-  })();
+  requestAnimationFrame(() => {
+    html.classList.add('is-ready');
+    markReady();
+  });
 
   /* ------------------------------------------------------------------
      Revelação no scroll
@@ -325,23 +248,17 @@
   }
 
   /* ------------------------------------------------------------------
-     Header, progresso, parallax, faixas, pilha de cartões
+     Header, progresso, parallax, pilha de cartões
      ------------------------------------------------------------------ */
   const header = $('[data-header]');
   const progress = $('.progress span');
   const waFloat = $('[data-wa]');
-  const hero = $('[data-hero]');
-  const heroGlow = $('[data-hero-glow]');
 
   const parallax = $$('[data-speed]').map((el) => ({ el, speed: parseFloat(el.dataset.speed) || 0, base: 0 }));
-  const marquees = $$('[data-marquee]').map((track) => {
-    track.innerHTML += track.innerHTML;
-    return { track, x: 0, w: 0, dir: parseFloat(track.dataset.dir) || 1 };
-  });
   const steps = $$('.step');
   const stackSection = $('.method');
 
-  const view = { vh: innerHeight, docH: 1, heroVisible: true, stackVisible: false, wide: wideQuery.matches };
+  const view = { vh: innerHeight, docH: 1, stackVisible: false, wide: wideQuery.matches };
 
   function measure() {
     view.vh = innerHeight;
@@ -353,7 +270,6 @@
       const r = p.el.getBoundingClientRect();
       p.base = r.top + y + r.height / 2;
     });
-    marquees.forEach((m) => { m.w = m.track.scrollWidth / 2; });
     renderChart();
     lastFrameY = -1;
   }
@@ -367,16 +283,13 @@
 
   const visIO = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
-      if (e.target === hero) view.heroVisible = e.isIntersecting;
       if (e.target === stackSection) view.stackVisible = e.isIntersecting;
     });
   });
-  if (hero) visIO.observe(hero);
   if (stackSection) visIO.observe(stackSection);
 
-  // Cursor e brilho do hero
+  // Cursor
   const pointer = { x: innerWidth * 0.6, y: innerHeight * 0.4, active: false };
-  const glow = { x: pointer.x, y: pointer.y };
   const ring = { x: -100, y: -100 };
   const cursor = $('.cursor');
   const cursorRing = $('.cursor__ring');
@@ -394,19 +307,12 @@
 
   let lastFrameY = -1;
   let lastY = scrollY;
-  let lastT = performance.now();
-  let vel = 0;
-  let scrollDir = 1;
   let headerHidden = false;
 
-  function frame(now) {
-    const dt = clamp((now - lastT) / 16.67, 0.25, 3);
-    lastT = now;
+  function frame() {
     const y = scrollY;
     const dy = y - lastY;
     lastY = y;
-    vel = lerp(vel, dy, 0.18);
-    if (dy > 0.5) scrollDir = 1; else if (dy < -0.5) scrollDir = -1;
 
     // Header: aparece ao rolar para cima, some ao descer
     if (header) {
@@ -445,25 +351,6 @@
       }
 
       updateChart(view.vh);
-    }
-
-    // Faixas: velocidade e direção acompanham o scroll
-    if (!reduceMotion) {
-      const boost = Math.min(Math.abs(vel) * 0.35, 14);
-      marquees.forEach((m) => {
-        if (!m.w) return;
-        m.x -= (0.55 + boost) * dt * m.dir * scrollDir;
-        if (m.x <= -m.w) m.x += m.w;
-        if (m.x > 0) m.x -= m.w;
-        m.track.style.transform = `translate3d(${m.x.toFixed(2)}px, 0, 0)`;
-      });
-    }
-
-    // Brilho que segue o mouse no hero
-    if (heroGlow && view.heroVisible && !reduceMotion) {
-      glow.x = lerp(glow.x, pointer.x, 0.06);
-      glow.y = lerp(glow.y, pointer.y + y, 0.06);
-      heroGlow.style.transform = `translate3d(${glow.x.toFixed(1)}px, ${glow.y.toFixed(1)}px, 0)`;
     }
 
     // Anel do cursor com atraso suave
@@ -535,7 +422,6 @@
           el.style.setProperty('--ry', `${((px - 0.5) * max).toFixed(2)}deg`);
           el.style.setProperty('--gx', `${(px * 100).toFixed(1)}%`);
           el.style.setProperty('--gy', `${(py * 100).toFixed(1)}%`);
-          el.style.setProperty('--holo', `${(px * 100).toFixed(1)}%`);
         });
       });
       el.addEventListener('pointerleave', () => {
